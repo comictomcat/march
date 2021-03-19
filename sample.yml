@@ -1,0 +1,19 @@
+# This file should be saved as ~/.config/march/config.yml
+# The script automatically copies it to the folder
+
+upgrade:
+  short: u
+  command: sudo pacman -Syu
+orphans:
+  short: o
+  command: sudo pacman -Qtdq | sudo pacman -Rns -
+cache:
+  short: c
+  command: sudo pacman -Sc --noconfirm
+journal:
+  short: j
+  command: sudo journalctl --rotate && sudo journalctl --vacuum-time=2d
+junk:
+  short: t
+  command: sudo find ~ -type f \( -name '*.swp' -o -name '*~' -o -name '*.bak' -o -name '.netrwhist' \) -delete
+  
